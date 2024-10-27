@@ -13,7 +13,7 @@ void main() {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        colorSchemeSeed: Color.fromARGB(131, 6, 204, 108),
+        colorSchemeSeed: const Color.fromARGB(131, 6, 204, 108),
         scaffoldBackgroundColor: Colors.white,
       ),
     ),

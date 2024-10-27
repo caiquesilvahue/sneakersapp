@@ -2,6 +2,13 @@ import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   final count = 0.obs;
+  RxInt selectedIndex = 0.obs;
+
+  void onItemTapped(value) {
+    selectedIndex.value = value;
+    update();
+  }
+
   @override
   // ignore: unnecessary_overrides
   void onInit() {
