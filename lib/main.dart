@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.red,
         title: Text(
           widget.title,
-          style: TextStyle(fontSize: 15),
+          style: const TextStyle(fontSize: 15),
         ),
       ),
       backgroundColor: Colors.white70,
