@@ -10,6 +10,12 @@ void main() {
       title: "Application",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Color.fromARGB(131, 6, 204, 108),
+        scaffoldBackgroundColor: Colors.white,
+      ),
     ),
   );
 }
