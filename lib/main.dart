@@ -13,8 +13,13 @@ void main() {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        colorSchemeSeed: const Color.fromARGB(131, 6, 204, 108),
-        scaffoldBackgroundColor: Colors.white,
+        colorSchemeSeed: const Color.fromARGB(255, 41, 147, 45),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          elevation: 0,
+          selectedIconTheme: IconThemeData(
+            color: Color.fromARGB(255, 41, 147, 45),
+          ),
+        ),
       ),
     ),
   );

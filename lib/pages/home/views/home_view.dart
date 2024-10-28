@@ -8,37 +8,46 @@ class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('HomeView'),
-        centerTitle: true,
+    List<BottomNavigationBarItem> bottomNavigationBarItem =
+        const <BottomNavigationBarItem>[
+      BottomNavigationBarItem(
+        icon: Icon(Icons.menu),
+        label: '',
       ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.home),
+        label: '',
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.shopping_cart),
+        label: '',
+        tooltip: '',
+      ),
+    ];
+    List<Widget> homePages = [
+      Container(
+        color: Colors.pink,
+      ),
+      Container(
+        color: Colors.orange,
+      ),
+      Container(
+        color: Colors.blue,
+      ),
+    ];
+    return Scaffold(
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.business),
-              label: 'Business',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.school),
-              label: 'School',
-            ),
-          ],
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          items: bottomNavigationBarItem,
           currentIndex: controller.selectedIndex.value,
           selectedItemColor: Colors.amber[800],
           onTap: controller.onItemTapped,
         ),
       ),
-      body: const Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+      body: Obx(
+        () => homePages[controller.selectedIndex.value],
       ),
     );
   }
