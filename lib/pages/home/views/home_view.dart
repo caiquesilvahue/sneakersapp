@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:sneakerapp/pages/home/widgets/home_page_widget.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -25,29 +26,36 @@ class HomeView extends GetView<HomeController> {
       ),
     ];
     List<Widget> homePages = [
-      Container(
-        color: Colors.pink,
+      Center(
+        child: Text(
+          'Menu Config',
+          style: TextStyle(fontSize: 40),
+        ),
       ),
-      Container(
-        color: Colors.orange,
-      ),
-      Container(
-        color: Colors.blue,
+      HomePageWidget(),
+      const Center(
+        child: Text(
+          'Car Shopping',
+          style: TextStyle(fontSize: 40),
+        ),
       ),
     ];
     return Scaffold(
+      appBar: AppBar(
+        title: Text('SneakerApp'),
+        centerTitle: true,
+      ),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
           showSelectedLabels: false,
           showUnselectedLabels: false,
           items: bottomNavigationBarItem,
           currentIndex: controller.selectedIndex.value,
-          selectedItemColor: Colors.amber[800],
           onTap: controller.onItemTapped,
         ),
       ),
       body: Obx(
-        () => homePages[controller.selectedIndex.value],
+        () => SafeArea(child: homePages[controller.selectedIndex.value]),
       ),
     );
   }
