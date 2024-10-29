@@ -26,13 +26,13 @@ class HomeView extends GetView<HomeController> {
       ),
     ];
     List<Widget> homePages = [
-      Center(
+      const Center(
         child: Text(
           'Menu Config',
           style: TextStyle(fontSize: 40),
         ),
       ),
-      HomePageWidget(),
+      const HomePageWidget(),
       const Center(
         child: Text(
           'Car Shopping',
@@ -42,7 +42,7 @@ class HomeView extends GetView<HomeController> {
     ];
     return Scaffold(
       appBar: AppBar(
-        title: Text('SneakerApp'),
+        title: const Text('SneakerApp'),
         centerTitle: true,
       ),
       bottomNavigationBar: Obx(
