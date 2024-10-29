@@ -14,6 +14,7 @@ void main() {
       theme: ThemeData(
         useMaterial3: true,
         colorSchemeSeed: const Color.fromARGB(255, 41, 147, 45),
+        primaryColor: const Color.fromARGB(255, 41, 147, 45),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           elevation: 0,
           selectedIconTheme: IconThemeData(

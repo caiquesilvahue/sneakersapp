@@ -42,8 +42,9 @@ class HomeView extends GetView<HomeController> {
     ];
     return Scaffold(
       appBar: AppBar(
-        title: const Text('SneakerApp'),
+        title: const Text('Sneaker'),
         centerTitle: true,
+        elevation: 0,
       ),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
